@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% block title %}DoctorHome{% endblock title %}
+{% block body %}
+<!-- Page content--> 
+<div class="container mt-3">
+  <div class="row">
+    <div class="col-md-12 d-flex justify-content-end">
+      <a href="{% url 'Doctor_logout' %}" class="btn btn-primary">Logout</a>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid">
+  <br><br><br>
+  
+  <table class="table table-bordered" id="example" style="text-align: center;">
+        <thead class=" table-success">
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Sex</th>
+            <th>Age</th>
+            <th>Contact</th>
+            <th>Address</th>
+            <th>Describe</th>
+            <th>Date</th>
+            <!-- Add more columns here -->
+          </tr>
+        </thead>
+          <!-- Data from Backend yaha pe jayega-->
+          {% for patient in Patients%}
+          <tr>
+            <td>{{patient.name}}</td>
+            <td>{{patient.email}}</td>
+            <td>{{patient.sex}}</td>
+            <td>{{patient.age}}</td>
+            <td>{{patient.contact}}</td>
+            <td>{{patient.address}}</td>
+            <td>{{patient.describe}}</td>
+            <td>{{patient.date}}</td>
+        </tr>
+        {% endfor %}        
+      </table>
+    </div>
+    <br><br><br>
+
+  
+    {% endblock body %}
+
+
+
+

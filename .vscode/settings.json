@@ -1,0 +1,7 @@
+{
+    "emmet.useInlineCompletions": false,
+    "emmet.showSuggestionsAsSnippets": true,
+    "emmet.includeLanguages": {
+        "django-html": "html"
+    }
+}
